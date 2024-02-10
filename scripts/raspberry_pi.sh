@@ -10,7 +10,7 @@ case "$1" in
         echo `cat /sys/class/thermal/thermal_zone0/temp | sed -e 's/\(..\)\(.*\)/\1.\2/'`
         ;;
     gpu_temp) #Определяем температуру GPU
-        echo `/opt/vc/bin/vcgencmd measure_temp|cut -c6-9`
+        echo `vcgencmd measure_temp|cut -c6-9`
         ;;
     *)
         echo "Не правильный параметр!"
